@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(360deg, #080f1d, #070f1d, #171d21, #2c2f31);
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+.card {
+  position: relative;
+  width: 320px;
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.card .champ {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.ahriBg {
+  background: url('./img/ahri.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.morganaBg {
+  background-image: url('./img/Morgana_0.jpg');
+  background-repeat: no-repeat;
+  background-position: -748px -34px;
+}
+.luxBg {
+  background-image: url('./img/luxanna.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.card .champ::before {
+  content: '';
+  position: absolute;
+  bottom: -180px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #183a76 50%, transparent);
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.card:hover .champ::before {
+  bottom: 0px;
+}
+
+.card .champ img {
+  width: 100%;
+  transition: 0.5s;
+}
+
+.card:hover .champ img {
+  transform: translateY(-50px);
+  filter: blur(5px);
+}
+
+.card .detalles {
+  position: absolute;
+  left: 0;
+  padding: 16px;
+  width: 100%;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.ahri {
+  bottom: -230px;
+}
+
+.morgana {
+  bottom: -265px;
+}
+
+.lux {
+  bottom: -280px;
+}
+
+.card:hover .detalles {
+  bottom: 0px;
+}
+
+.card .detalles .logo {
+  max-width: 180px;
+}
+.card .detalles h3 {
+  font-size: 20px;
+  color: #fff;
+  padding: 0px 5px 5px 0px;
+}
+
+.card .detalles .tags span {
+  padding: 5px 5px;
+  color: #fff;
+  background: #64689080;
+  border-radius: 4px;
+  text-align: center;
+  font-size: small;
+}
+
+.card .detalles .info {
+  font-size: 15px;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: max-content;
+}
